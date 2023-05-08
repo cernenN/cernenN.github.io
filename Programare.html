@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            
+            <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F43XXFNCZX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F43XXFNCZX');
+</script>
+            
+            <meta name="viewport" content="with=device-width, initial-scale=1.0">
+            <title>Clinica veterinara</title>
+            <link rel= "stylesheet" href="style.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+           <link rel="stylesheet" href="font/css/font-awesome.min.css">
+         
+        </head>
+        <body>
+            <section class="sub_header">
+                <nav>
+                    <a href="site.html"><img src="poze/logo.png"></a>
+                    <div class="nav-links" id="navLinks">  
+              
+                        <ul>
+                            <li><a href="site.html">HOME</a></li>
+                             <li><a href="about.html">ABOUT</a></li>
+                             <li><a href="Servicii.html">SERVICII</a></li>
+                             <li><a href="Programare.html">REZERVARI</a></li>
+                             <li><a href="Fisa%20medicala.html">FISA PACIENTULUI</a></li>
+                             <li><a href="Contacte.html">CONTACTE</a></li>
+                
+                        </ul>
+                        
+                    </div>
+                        <i class="fa fa-bars" onclick="showMenu()" ></i>
+                </nav>
+                   <h1>Fa o programare</h1>
+            </section>
+          
+              
+                    
+            
+<div class="container">
+		<div class="form">
+			<h2>Programare la medic veterinar</h2>
+			<form>
+				<label for="name">Nume:</label>
+				<input type="text" id="name" name="name" required>
+				<label for="surname">Prenume:</label>
+				<input type="text" id="surname" name="surname" required>
+				<label for="date">Data programării:</label>
+				<input type="date" id="date" name="date" required>
+				<label for="time">Ora programării:</label>
+				<input type="time" id="time" name="time" required>
+				<label for="phone">Număr de telefon:</label>
+				<input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+				<input type="submit" value="TRIMITE">
+                <p>Nu uita dupa completarea programarii e nevoie de completarea fisei medicale</p>
+                <a href="Fisa%20medicala.html" class="hero-bttn">COMPLETEAZA FISA MEDICALA</a>
+			</form>
+		</div>
+		<div class="image">
+			<img src="poze/rezervare.jpeg" alt="">
+		</div>
+	</div>
+               
+
+
+                     
+            
+            <!-----------footer------------>
+           
+
+	 
+            <section class="footer">
+            <h4>About us</h4>
+                <p>Suntem una dintre cele mai bune clinici din tara in acest moment<br>Vino si convinge-te</p>
+                <div class="icons">
+                <i class="fa fa-facebook"></i>
+                 <i class="fa fa-instagram"></i>
+                <i class="fa fa-twitter"></i> 
+                 <i class="fa fa-linkedin"></i>
+                </div>
+                <p>Made with <i class="fa fa-heart-o"></i> by CERNENCHI NADEJDA</p>
+            </section>
+            <!-----------JavaScript------------>
+            
+            <script>
+                var navLinks= document.getElementById("navLinks");
+                function showMenu(){
+                    navLinks.style.right="0";
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+                }
+        
+            
+               
+                    const form = document.querySelector('form');
+const name = document.querySelector('#name');
+const surname = document.querySelector('#surname');
+const date = document.querySelector('#date');
+const phone = document.querySelector('#phone');
+const email = document.querySelector('#email');
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (validateName() && validateSurname() && validateDate() && validateTime() && validatePhone() && validateEmail()) {
+    const data = {
+      name: name.value,
+      surname: surname.value,
+      date: date.value,
+      phone: phone.value,
+      email: email.value
+    };
+    await sendFormData(data);
+    clearForm();
+  }
+});
+
+function validateName() {
+  const regex = /^[a-zA-Z]{2,}$/;
+  if (!regex.test(name.value)) {
+    name.setCustomValidity('Numele trebuie să conțină cel puțin două caractere alfabetice.');
+    name.reportValidity();
+    return false;
+  }
+  name.setCustomValidity('');
+  return true;
+}
+
+function validateSurname() {
+  const regex = /^[a-zA-Z]{2,}$/;
+  if (!regex.test(surname.value)) {
+    surname.setCustomValidity('Prenumele trebuie să conțină cel puțin două caractere alfabetice.');
+    surname.reportValidity();
+    return false;
+  }
+  surname.setCustomValidity('');
+  return true;
+}
+
+function validateDate() {
+  const now = new Date();
+  const selectedDate = new Date(date.value);
+  if (selectedDate < now) {
+    date.setCustomValidity('Data trebuie să fie ulterioară datei curente.');
+    date.reportValidity();
+    return false;
+  }
+  date.setCustomValidity('');
+  return true;
+}
+
+function validatePhone() {
+  const regex = /^[0-9]{10}$/;
+  if (!regex.test(phone.value)) {
+    phone.setCustomValidity('Numărul de telefon trebuie să conțină exact 10 cifre.');
+    phone.reportValidity();
+    return false;
+  }
+  phone.setCustomValidity('');
+  return true;
+}
+
+function validateEmail() {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!regex.test(email.value)) {
+    email.setCustomValidity('Email-ul nu este valid.');
+    email.reportValidity();
+    return false;
+  }
+  email.setCustomValidity('');
+  return true;
+}
+
+function clearForm() {
+  name.value = '';
+  surname.value = '';
+  date.value = '';
+  phone.value = '';
+  email.value = '';
+}
+
+await sendFormData(data);
+clearForm();
+
+
+
+
+                    
+                </script>
+
+               
+        </body>
+</html>
+
+            

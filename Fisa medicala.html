@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            
+            <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F43XXFNCZX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F43XXFNCZX');
+</script>
+            
+            <meta name="viewport" content="with=device-width, initial-scale=1.0">
+            <title>Clinica veterinara</title>
+            <link rel= "stylesheet" href="style.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+           <link rel="stylesheet" href="font/css/font-awesome.min.css">
+        
+
+        </head>
+        <body>
+            <section class="sub_header">
+                <nav>
+                    <a href="site.html"><img src="poze/logo.png"></a>
+                    <div class="nav-links" id="navLinks">  
+              
+                        <ul>
+                          <li><a href="site.html">HOME</a></li>
+                             <li><a href="about.html">ABOUT</a></li>
+                             <li><a href="Servicii.html">SERVICII</a></li>
+                             <li><a href="Programare.html">REZERVARI</a></li>
+                             <li><a href="Fisa%20medicala.html">FISA PACIENTULUI</a></li>
+                             <li><a href="Contacte.html">CONTACTE</a></li>
+                        </ul>
+                        
+                    </div>
+                        <i class="fa fa-bars" onclick="showMenu()" ></i>
+                </nav>
+                   <h1>Fisa Medicala</h1>
+            </section>
+          
+               
+                    
+            
+
+<div class="container">
+      <h1>Fisa medicala animal de companie</h1>
+      <form id="medical-form">
+        <div class="form-group">
+          <label for="animal-type">Tip animal de companie:</label>
+          <select id="animal-type" name="animal-type">
+            <option value="cat">Pisica</option>
+            <option value="dog">Caine</option>
+            <option value="bird">Pasare</option>
+            <option value="hamster">Hamster</option>
+            <option value="other">Altul</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="animal-name">Nume:</label>
+          <input type="text" id="animal-name" name="animal-name">
+            
+        </div>
+        <div class="form-group">
+          <label for="animal-age">Varsta:</label>
+          <input type="number" id="animal-age" name="animal-age" min="0">
+        </div>
+        <div class="form-group">
+          <label for="animal-weight">Greutate:</label>
+          <input type="number" id="animal-weight" name="animal-weight" min="0">
+        </div>
+        <div class="form-group">
+          <label for="animal-issue">Problema cu care se confrunta:</label>
+          <textarea id="animal-issue" name="animal-issue"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="animal-symptoms">Simptome:</label>
+          <textarea id="animal-symptoms" name="animal-symptoms"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="appointment-date">Data programarii realizate anterior:</label>
+          <input type="date" id="appointment-date" name="appointment-date">
+        </div>
+        <div class="form-group">
+          <label for="appointment-time">Ora programarii realizate anterior:</label>
+          <input type="time" id="appointment-time" name="appointment-time">
+        </div>
+        <div class="form-group">
+          <button type="submit">Salveaza</button>
+        </div>
+      </form>
+      <div id="medical-card" class="card"></div>
+    </div>
+            
+
+
+
+                     
+            
+            <!-----------footer------------>
+            
+            <section class="footer">
+            <h4>About us</h4>
+                <p>Suntem una dintre cele mai bune clinici din tara in acest moment<br>Vino si convinge-te</p>
+                <div class="icons">
+                <i class="fa fa-facebook"></i>
+                 <i class="fa fa-instagram"></i>
+                <i class="fa fa-twitter"></i> 
+                 <i class="fa fa-linkedin"></i>
+                </div>
+                <p>Made with <i class="fa fa-heart-o"></i> by CERNENCHI NADEJDA</p>
+            </section>
+            <!-----------JavaScript------------>
+            
+            <script>
+                var navLinks= document.getElementById("navLinks");
+                function showMenu(){
+                    navLinks.style.right="0";
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+                }
+        
+            
+               
+                    
+function clearForm() {
+  name.value = '';
+  surname.value = '';
+  date.value = '';
+  phone.value = '';
+  email.value = '';
+}
+
+await sendFormData(data);
+clearForm();
+
+
+
+
+                    
+                </script>
+
+               
+        </body>
+</html>
+
+            
